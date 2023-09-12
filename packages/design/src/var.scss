@@ -1,0 +1,69 @@
+@use 'shared' as *;
+
+// common
+:root {
+  @include set-component-css-var('font-size', $font-size);
+  @include set-component-css-var('font-family', $font-family);
+
+  // z-index --etfma-index-#{$type}
+  @include set-component-css-var('index', $z-index);
+
+  // --etfma-border-radius-#{$type}
+  @include set-component-css-var('border-radius', $border-radius);
+
+  // Transition
+  // refer to this website to get the bezier motion function detail
+  // https://cubic-bezier.com/#p1,p2,p3,p4 (change px as your function parameter)
+  @include set-component-css-var('transition-duration', $transition-duration);
+  @include set-component-css-var('transition-function', $transition-function);
+  @include set-component-css-var('transition', $transition);
+
+  // component size
+  @include set-component-css-var('component-size', $common-component-size);
+}
+
+// 颜色相关
+:root {
+  // --etfma-color-#{$type}
+  // --etfma-color-#{$type}-light-{$i}
+  @each $type in $types {
+    @include set-css-color-type($colors, $type);
+  }
+
+  color-scheme: light;
+
+  @include set-css-var-value('color-white', $color-white);
+  @include set-css-var-value('color-black', $color-black);
+
+  // color-scheme
+  // Background --etfma-bg-color-#{$type}
+  @include set-component-css-var('bg-color', $bg-color);
+
+  // --etfma-text-color-#{$type}
+  @include set-component-css-var('text-color', $text-color);
+
+  // --etfma-border-color-#{$type}
+  @include set-component-css-var('border-color', $border-color);
+
+  // Fill --etfma-fill-color-#{$type}
+  @include set-component-css-var('fill-color', $fill-color);
+
+  // --etfma-box-shadow-#{$type}
+  @include set-component-css-var('box-shadow', $box-shadow);
+
+  // Disable base
+  @include set-component-css-var('disabled', $disabled);
+
+  // overlay & mask
+  @include set-component-css-var('overlay-color', $overlay-color);
+  @include set-component-css-var('mask-color', $mask-color);
+
+  // Border
+  @include set-css-var-value('border-width', $border-width);
+  @include set-css-var-value('border-style', $border-style);
+  @include set-css-var-value('border-color-hover', $border-color-hover);
+  @include set-css-var-value(
+    'border',
+    getCssVar('border-width') getCssVar('border-style') getCssVar('border-color')
+  );
+}

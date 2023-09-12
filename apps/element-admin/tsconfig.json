@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@etfma/ts/web.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "types": ["vite/client", "element-plus/global", "unplugin-vue-define-options/macros-global"],
+    "paths": {
+      "@/*": ["src/*"],
+      "#/*": ["types/*"]
+    }
+  },
+  "vueCompilerOptions": {
+    "target": 3,
+    "plugins": ["@vue-macros/volar/define-options"]
+  },
+  "include": ["src", "mock", "vite.config.ts", "vitest.config"]
+}

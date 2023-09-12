@@ -1,0 +1,39 @@
+{
+  "folders": [
+    {
+      "name": "@etfma/element-admin",
+      "path": "apps/element-admin"
+    },
+    {
+      "name": "@etfma/eslint",
+      "path": "configs/eslint"
+    },
+    {
+      "name": "@etfma/prettier",
+      "path": "configs/prettier"
+    },
+    {
+      "name": "@etfma/ts",
+      "path": "configs/ts"
+    },
+    {
+      "name": "@etfma/vite",
+      "path": "configs/vite"
+    },
+    {
+      "name": "@etfm/hooks",
+      "path": "packages/hooks"
+    },
+    {
+      "name": "@etfm/shared",
+      "path": "packages/shared"
+    },
+    {
+      "name": "root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib"
+  }
+}

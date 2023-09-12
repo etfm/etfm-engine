@@ -1,0 +1,29 @@
+{
+  "name": "element-admin",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "build": "pnpm build-only & pnpm preview",
+    "build-only": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@etfm/engine": "workspace:*",
+    "@etfm/hooks": "workspace:*",
+    "@etfm/shared": "workspace:*",
+    "@etfma/design": "workspace:*",
+    "nprogress": "^0.2.0",
+    "path-to-regexp": "^6.2.1",
+    "vue": "^3.3.4",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@etfm/types": "workspace:*",
+    "@types/nprogress": "^0.2.0",
+    "vite-plugin-mock": "^2.9.6"
+  }
+}

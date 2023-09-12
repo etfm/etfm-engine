@@ -1,0 +1,45 @@
+{
+  "name": "@etfm/shell",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/etfm/vue-etfm-admin#readme",
+  "bugs": {
+    "url": "https://github.com/etfm/vue-etfm-admin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etfm/vue-etfm-admin.git"
+  },
+  "license": "ISC",
+  "author": "lzdjack <1956252575@qq.com>",
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "build": "pnpm vite build",
+    "clean": "pnpm rimraf .turbo node_modules dist",
+    "lint": "pnpm eslint .",
+    "test": "node ./__tests__/@etfma/http.test.js"
+  },
+  "dependencies": {
+    "@etfm/hooks": "workspace:*",
+    "@etfm/persistent": "workspace:*",
+    "@etfm/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@etfm/types": "workspace:^0.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.ts"
+      }
+    }
+  }
+}

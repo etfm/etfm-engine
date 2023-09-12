@@ -1,0 +1,59 @@
+{
+  "name": "@etfma/design",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/etfm/vue-etfm-admin#readme",
+  "bugs": {
+    "url": "https://github.com/etfm/vue-etfm-admin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etfm/vue-etfm-admin.git"
+  },
+  "license": "ISC",
+  "author": "lzdjack <1956252575@qq.com>",
+  "exports": {
+    ".": {
+      "development": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    },
+    "./shared": {
+      "default": "./src/_shared.scss"
+    },
+    "./dark": {
+      "default": "./src/dark/css-vars.scss"
+    },
+    "./light": {
+      "default": "./src/index.scss"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "build": "pnpm vite build",
+    "clean": "pnpm rimraf .turbo node_modules dist",
+    "test": "node ./__tests__/@etfma/styles.test.js"
+  },
+  "dependencies": {
+    "modern-normalize": "^1.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "./shared": {
+        "default": "./src/_shared.scss"
+      }
+    }
+  }
+}
