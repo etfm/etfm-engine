@@ -1,4 +1,4 @@
-import { store, defineStore } from '@etfma/plugin-pinia';
+import { store, defineStore } from '@etfm/plugin-pinia';
 import { ROLES_KEY, TOKEN_KEY, USER_INFO_KEY } from '@/enums/cacheEnum';
 import { getAuthCache, setAuthCache } from '@/cache/auth';
 import type { GetUserInfoModel, LoginParams } from '@/api/sys/model/userModel';

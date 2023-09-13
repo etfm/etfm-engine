@@ -15,9 +15,9 @@ export interface CreateStorageParams {
  * @example
  */
 class WebStorage {
-  private storage: Storage;
-  private prefixKey?: string;
-  private timeout;
+  storage: Storage;
+  prefixKey?: string;
+  timeout;
   /**
    *
    * @param {*} storage
@@ -28,7 +28,7 @@ class WebStorage {
     this.timeout = timeout;
   }
 
-  private getKey(key: string) {
+  getKey(key: string) {
     return `${this.prefixKey}${key}`.toUpperCase();
   }
 

@@ -1,6 +1,6 @@
 import { AppRouteRecordRaw, material } from 'etfm-engine';
 
-import { defineStore, store } from '@etfma/plugin-pinia';
+import { defineStore, store } from '@etfm/plugin-pinia';
 
 import { getMenuList } from '@/api/sys/menu';
 import { getPermCode } from '@/api/sys/user';

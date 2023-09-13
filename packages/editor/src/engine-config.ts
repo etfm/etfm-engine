@@ -10,14 +10,6 @@ const VALID_ENGINE_OPTIONS = {
     type: 'object',
     description: '主题配置',
   },
-  i18n: {
-    type: 'object',
-    description: '多语言',
-  },
-  router: {
-    type: 'object',
-    description: '路由，继承vue-router所有配置',
-  },
   version: {
     type: 'string',
     description: 'Etfm-Engine 版本',

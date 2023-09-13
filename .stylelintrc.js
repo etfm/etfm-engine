@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ['@etfma/stylelint'],
+  extends: ['@etfm/stylelint'],
 };

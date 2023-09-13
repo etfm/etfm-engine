@@ -1,4 +1,4 @@
-import { http } from '@etfma/plugin-http';
+import { http } from '@etfm/plugin-http';
 
 enum Api {
   Login = '/login',

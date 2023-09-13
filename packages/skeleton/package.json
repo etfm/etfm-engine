@@ -23,7 +23,7 @@
     "build": "pnpm vite build",
     "clean": "pnpm rimraf .turbo node_modules dist",
     "lint": "pnpm eslint .",
-    "test": "node ./__tests__/@etfma/http.test.js"
+    "test": "node ./__tests__/@etfm/http.test.js"
   },
   "dependencies": {
     "@etfm/editor": "workspace:*",

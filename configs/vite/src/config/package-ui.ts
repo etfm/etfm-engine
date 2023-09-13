@@ -21,7 +21,7 @@ function definePackageUIConfig(defineOptions: DefineOptions = {}) {
       css: {
         preprocessorOptions: {
           scss: {
-            additionalData: `@use '@etfma/design/shared' as *;`,
+            additionalData: `@use '@etfm/design/shared' as *;`,
           },
         },
       },

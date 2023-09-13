@@ -1,5 +1,5 @@
 // Interface data format used to return a unified format
-// import { ResultEnum } from '@etfma/http'
+// import { ResultEnum } from '@etfm/http'
 
 export function resultSuccess<T = any>(data: T, { message = 'ok' } = {}) {
   return {

@@ -1,11 +1,11 @@
-# `@etfma/http`
+# `@etfm/http`
 
 > TODO: description
 
 ## Usage
 
 ```
-const http = require('@etfma/http');
+const http = require('@etfm/http');
 
 // TODO: DEMONSTRATE API
 ```

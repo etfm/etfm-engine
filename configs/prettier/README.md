@@ -1,11 +1,11 @@
-# `@etfma/prettier`
+# `@etfm/prettier`
 
 > TODO: description
 
 ## Usage
 
 ```
-const prettier = require('@etfma/prettier');
+const prettier = require('@etfm/prettier');
 
 // TODO: DEMONSTRATE API
 ```

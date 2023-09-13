@@ -1,4 +1,4 @@
-import { defineApplicationConfig } from '@etfma/vite';
+import { defineApplicationConfig } from '@etfm/vite';
 
 export default defineApplicationConfig({
   overrides: {

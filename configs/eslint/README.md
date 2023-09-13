@@ -1,11 +1,11 @@
-# `@etfma/eslint`
+# `@etfm/eslint`
 
 > TODO: description
 
 ## Usage
 
 ```
-const eslint = require('@etfma/eslint');
+const eslint = require('@etfm/eslint');
 
 // TODO: DEMONSTRATE API
 ```

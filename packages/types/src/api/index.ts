@@ -6,3 +6,5 @@ export * from './plugins';
 export * from './theme';
 export * from './config';
 export * from './persistent';
+export * from './router';
+export * from './i18n';

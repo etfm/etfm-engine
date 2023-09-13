@@ -1,5 +1,4 @@
 import { isString } from 'lodash-es';
-import { isClient, isIOS } from '@vueuse/core';
 
 export const isStringNumber = (val: string): boolean => {
   if (!isString(val)) {
@@ -7,7 +6,6 @@ export const isStringNumber = (val: string): boolean => {
   }
   return !Number.isNaN(Number(val));
 };
-
 
 export function isPluginEventName(eventName: string): boolean {
   if (!eventName) {
@@ -27,7 +25,7 @@ export function is(value: unknown, type: string) {
  * @param pathname
  * @returns
  */
- export function isHttpUrl(url: string) {
+export function isHttpUrl(url: string) {
   // Regular expression to match HTTP(S) URL
   const httpRegex = /^https?:\/\/.*$/;
   return httpRegex.test(url);
@@ -40,10 +38,3 @@ export function isMap(value: unknown): value is Map<any, any> {
 export function isWindow(value: any): value is Window {
   return typeof window !== 'undefined' && value !== null && value === value.window;
 }
-
-
-
-
-export const isFirefox = (): boolean => isClient && /firefox/i.test(window.navigator.userAgent);
-
-export { isClient, isIOS };

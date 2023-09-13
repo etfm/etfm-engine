@@ -25,18 +25,22 @@ const global = new Global(innerGlobal);
 
 const innerSkeleton = new InnerSkeleton();
 const skeleton = new Skeleton(innerSkeleton);
-global.set('skeleton', innerSkeleton);
+global.register(skeleton, 'skeleton');
 
 const theme = new Theme(globalTheme);
-global.set('theme', theme);
+global.register(theme, 'theme');
 
 const config = new Config(engineConfig);
+global.register(config, 'config');
 
 const event = new Event(commonEvent, { prefix: 'common' });
+global.register(event, 'event');
 
 const logger = new Logger({ bizName: 'common' });
+global.register(logger, 'logger');
 
 const persistent = new Persistent();
+global.register(persistent, 'persistent');
 
 let plugins: IPublicApiPlugins;
 
@@ -60,8 +64,8 @@ const pluginContextApiAssembler: IPluginContextApiAssembler = {
 
 const innerPlugins = new PluginManager(pluginContextApiAssembler);
 plugins = new Plugins(innerPlugins).toProxy();
-global.set('innerPlugins', innerPlugins);
-global.set('plugins', plugins);
+global.register(innerPlugins, 'innerPlugins');
+global.register(plugins, 'plugins');
 
 export { skeleton, plugins, config, event, logger, global, theme, persistent };
 
@@ -77,11 +81,5 @@ export async function init(
 ) {
   engineConfig.setEngineOptions(options);
 
-  initInner();
-
   await plugins.init(pluginPreference);
-}
-
-function initInner() {
-  globalTheme.init();
 }

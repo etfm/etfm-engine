@@ -1,23 +1,23 @@
 {
   "folders": [
     {
-      "name": "@etfma/element-admin",
+      "name": "@etfm/element-admin",
       "path": "apps/element-admin"
     },
     {
-      "name": "@etfma/eslint",
+      "name": "@etfm/eslint",
       "path": "configs/eslint"
     },
     {
-      "name": "@etfma/prettier",
+      "name": "@etfm/prettier",
       "path": "configs/prettier"
     },
     {
-      "name": "@etfma/ts",
+      "name": "@etfm/ts",
       "path": "configs/ts"
     },
     {
-      "name": "@etfma/vite",
+      "name": "@etfm/vite",
       "path": "configs/vite"
     },
     {

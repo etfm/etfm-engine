@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@etfma/eslint'],
+  extends: ['@etfm/eslint'],
 };

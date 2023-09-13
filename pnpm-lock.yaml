@@ -11,15 +11,12 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.1.0
         version: 2.1.0(vue@3.3.4)
-      '@etfma/design':
+      '@etfm/design':
         specifier: workspace:*
         version: link:packages/design
       '@iconify/iconify':
         specifier: ^3.1.0
         version: 3.1.0
-      '@vueuse/core':
-        specifier: ^9.13.0
-        version: 9.13.0(vue@3.3.4)
       classnames:
         specifier: ^2.3.2
         version: 2.3.2
@@ -47,9 +44,6 @@ importers:
       semver:
         specifier: ^7.5.1
         version: 7.5.4
-      store:
-        specifier: ^2.0.12
-        version: 2.0.12
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -63,19 +57,19 @@ importers:
       '@commitlint/cli':
         specifier: ^17.5.1
         version: 17.6.3
-      '@etfma/eslint':
+      '@etfm/eslint':
         specifier: workspace:*
         version: link:configs/eslint
-      '@etfma/prettier':
+      '@etfm/prettier':
         specifier: workspace:*
         version: link:configs/prettier
-      '@etfma/stylelint':
+      '@etfm/stylelint':
         specifier: workspace:^0.0.0
         version: link:configs/stylelint
-      '@etfma/ts':
+      '@etfm/ts':
         specifier: workspace:*
         version: link:configs/ts
-      '@etfma/vite':
+      '@etfm/vite':
         specifier: workspace:*
         version: link:configs/vite
       '@types/jsdom':
@@ -156,6 +150,9 @@ importers:
 
   apps/element-admin:
     dependencies:
+      '@etfm/design':
+        specifier: workspace:*
+        version: link:../../packages/design
       '@etfm/engine':
         specifier: workspace:*
         version: link:../../packages/engine
@@ -165,9 +162,6 @@ importers:
       '@etfm/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@etfma/design':
-        specifier: workspace:*
-        version: link:../../packages/design
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -389,9 +383,6 @@ importers:
       '@etfm/shared':
         specifier: workspace:*
         version: link:../shared
-      store:
-        specifier: ^2.0.12
-        version: 2.0.12
     devDependencies:
       '@etfm/types':
         specifier: workspace:^0.0.0
@@ -438,6 +429,22 @@ importers:
         specifier: workspace:^0.0.0
         version: link:../types
 
+  packages/i18n:
+    dependencies:
+      '@etfm/editor':
+        specifier: workspace:*
+        version: link:../editor
+      '@etfm/hooks':
+        specifier: workspace:*
+        version: link:../hooks
+      '@etfm/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@etfm/types':
+        specifier: workspace:^0.0.0
+        version: link:../types
+
   packages/persistent:
     dependencies:
       '@etfm/shared':
@@ -461,17 +468,23 @@ importers:
         specifier: workspace:^0.0.0
         version: link:../types
 
-  packages/shared:
+  packages/router:
     dependencies:
-      '@vue/shared':
-        specifier: ^3.3.4
-        version: 3.3.4
-      '@vueuse/core':
-        specifier: ^9.13.0
-        version: 9.13.0(vue@3.3.4)
-      '@vueuse/shared':
-        specifier: ^9.13.0
-        version: 9.13.0(vue@3.3.4)
+      '@etfm/editor':
+        specifier: workspace:*
+        version: link:../editor
+      '@etfm/hooks':
+        specifier: workspace:*
+        version: link:../hooks
+      '@etfm/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@etfm/types':
+        specifier: workspace:^0.0.0
+        version: link:../types
+
+  packages/shared:
     devDependencies:
       '@etfm/types':
         specifier: workspace:^0.0.0
@@ -7767,10 +7780,6 @@ packages:
   /std-env@3.3.3:
     resolution: {integrity: sha512-Rz6yejtVyWnVjC1RFvNmYL10kgjC49EOghxWn0RFqlCHGFpQx+Xe7yW3I4ceK1SGrWIGMjD5Kbue8W/udkbMJg==}
     dev: true
-
-  /store@2.0.12:
-    resolution: {integrity: sha512-eO9xlzDpXLiMr9W1nQ3Nfp9EzZieIQc10zPPMP5jsVV7bLOziSFFBP0XoDXACEIFtdI+rIz0NwWVA/QVJ8zJtw==}
-    dev: false
 
   /stream-combiner@0.0.4:
     resolution: {integrity: sha512-rT00SPnTVyRsaSz5zgSPma/aHSOic5U1prhYdRy5HS2kTZviFpmDgzilbtsJsxiroqACmayynDN/9VzIbX5DOw==}

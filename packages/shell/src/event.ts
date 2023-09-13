@@ -26,7 +26,7 @@ export class Event implements IPublicApiEvent {
    * @param event 事件名称
    * @param listener 事件回调
    */
-  on(event: string, listener: (args: any[]) => void): IPublicTypeDisposable {
+  on(event: string, listener: (args: any) => void): IPublicTypeDisposable {
     if (isPluginEventName(event)) {
       return this[eventBusSymbol].on(`${this.options.prefix}:${event}`, listener);
     } else {
@@ -44,7 +44,7 @@ export class Event implements IPublicApiEvent {
    * @param event 事件名称
    * @param listener 事件回调
    */
-  off(event: string, listener: (args: any[]) => void) {
+  off(event: string, listener: (args: any) => void) {
     this[eventBusSymbol].off(`${this.options.prefix}:${event}`, listener);
   }
 
@@ -54,7 +54,7 @@ export class Event implements IPublicApiEvent {
    * @param args 事件参数
    * @returns
    */
-  emit(event: string, args: any[]) {
+  emit(event: string, args: any) {
     if (!this.options.prefix) {
       logger.warn('Event#emit has been forbidden while prefix is not specified');
       return;

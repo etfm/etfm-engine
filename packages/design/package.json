@@ -1,5 +1,5 @@
 {
-  "name": "@etfma/design",
+  "name": "@etfm/design",
   "version": "0.0.0",
   "description": "> TODO: description",
   "homepage": "https://github.com/etfm/vue-etfm-admin#readme",
@@ -39,7 +39,7 @@
     "bootstrap": "pnpm install",
     "build": "pnpm vite build",
     "clean": "pnpm rimraf .turbo node_modules dist",
-    "test": "node ./__tests__/@etfma/styles.test.js"
+    "test": "node ./__tests__/@etfm/styles.test.js"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"

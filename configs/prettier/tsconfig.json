@@ -1,5 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@etfma/ts/node.json",
+  "extends": "@etfm/ts/node.json",
   "include": ["src"]
 }

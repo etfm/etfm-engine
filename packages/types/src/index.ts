@@ -15,3 +15,5 @@ export * from './skeleton';
 export * from './theme';
 export * from './common';
 export * from './global';
+export * from './i18n';
+export * from './router';
