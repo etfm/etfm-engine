@@ -1,2 +1,2 @@
 import 'modern-normalize';
-import './common/global.scss';
+import './index.scss';

@@ -396,12 +396,18 @@ importers:
       '@etfm/hooks':
         specifier: workspace:*
         version: link:../hooks
+      '@etfm/i18n':
+        specifier: workspace:*
+        version: link:../i18n
       '@etfm/persistent':
         specifier: workspace:*
         version: link:../persistent
       '@etfm/plugin':
         specifier: workspace:*
         version: link:../plugin
+      '@etfm/router':
+        specifier: workspace:*
+        version: link:../router
       '@etfm/shared':
         specifier: workspace:*
         version: link:../shared

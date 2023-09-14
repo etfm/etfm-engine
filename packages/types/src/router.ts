@@ -1,13 +1,26 @@
 import { Component, DefineComponent } from 'vue';
 import { RouteMeta, RouteRecordRaw, Router, RouterHistory, RouterOptions } from 'vue-router';
 import { Recordable } from './common';
+import { IPublicTypeDisposable } from './disposable';
 
 export interface IGlobalRouter {
   router: Router;
-  init(): void;
+
   getRouters(
     routes: IPublicAppRouteRecordRaw[] | IPublicAppRouteRecordRaw,
   ): IPublicAppRouteRecordRaw[];
+
+  /**
+   * 设置多语言资源
+   * @param args
+   */
+  setAssets(args: IPublicAppRouteRecordRaw[]): void;
+
+  /**
+   * 监听多语言资源的变化
+   * @param listener
+   */
+  onAssets(listener: (args: IPublicAppRouteRecordRaw[]) => void): IPublicTypeDisposable;
 }
 
 export interface IPublicRouterOptions extends Omit<RouterOptions, 'routes' | 'history'> {

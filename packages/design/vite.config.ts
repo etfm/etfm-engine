@@ -1,3 +1,3 @@
-import { definePackageConfig } from '@etfm/vite';
+import { definePackageConfigCss } from '@etfm/vite';
 
-export default definePackageConfig();
+export default definePackageConfigCss();

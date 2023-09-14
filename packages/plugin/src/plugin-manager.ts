@@ -14,6 +14,7 @@ import {
   IPublicTypePluginRegisterOptions,
   IPublicTypePreferenceValueType,
   IPublicTypeDisposable,
+  IPublicTypeStates,
 } from '@etfm/types';
 
 const logger = new Logger({ bizName: 'pluginManager' });
@@ -183,13 +184,13 @@ export class PluginManager implements IPluginManager {
    * 监听插件全部插件加载状态
    * @param listener
    */
-  onNotify(listener: (args: any) => void): IPublicTypeDisposable {
+  onNotify(listener: (args: IPublicTypeStates) => void): IPublicTypeDisposable {
     this.eventBus.on('plugin:notify', listener);
 
     return () => this.eventBus.off('plugin:notify', listener);
   }
 
-  setNotify(states: string) {
+  setNotify(states: IPublicTypeStates) {
     this.eventBus.emit('plugin:notify', states);
   }
 

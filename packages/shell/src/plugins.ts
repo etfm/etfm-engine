@@ -3,8 +3,10 @@ import {
   IPublicApiPlugins,
   IPublicModelPluginInstance,
   IPublicPlugin,
+  IPublicTypeDisposable,
   IPublicTypePluginRegisterOptions,
   IPublicTypePreferenceValueType,
+  IPublicTypeStates,
 } from '@etfm/types';
 import { PluginInstance as ShellPluginInstance } from './plugin-instance';
 import { pluginsSymbol } from './symbols';
@@ -15,6 +17,7 @@ export class Plugins implements IPublicApiPlugins {
   constructor(plugins: IPluginManager) {
     this[pluginsSymbol] = plugins;
   }
+  [key: string]: any;
 
   async register(
     pluginModel: IPublicPlugin,
@@ -53,6 +56,10 @@ export class Plugins implements IPublicApiPlugins {
 
   async delete(pluginName: string) {
     return await this[pluginsSymbol].delete(pluginName);
+  }
+
+  onNotify(listener: (states: IPublicTypeStates) => void): IPublicTypeDisposable {
+    return this[pluginsSymbol].onNotify(listener);
   }
 
   toProxy() {

@@ -1,6 +1,7 @@
+import { IPublicTypeDisposable } from '../disposable';
 import { IPublicPlugin } from '../plugin/plugin';
 import { IPublicModelPluginInstance } from '../plugin/plugin-instance';
-import { PluginOptionsType } from '../plugin/plugin-manager';
+import { IPublicTypeStates, PluginOptionsType } from '../plugin/plugin-manager';
 import { IPublicTypePluginRegisterOptions } from '../plugin/plugin-register-options';
 import { IPublicTypePreferenceValueType } from '../preference-value-type';
 
@@ -52,4 +53,10 @@ export interface IPublicApiPlugins {
    * delete plugin instance by name
    */
   delete(pluginName: string): void;
+
+  /**
+   * 监听插件加载的状态
+   * @param listener
+   */
+  onNotify(listener: (states: IPublicTypeStates) => void): IPublicTypeDisposable;
 }

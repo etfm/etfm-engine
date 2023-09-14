@@ -41,3 +41,5 @@ export interface IPluginPreferenceMananger {
 }
 
 export type PluginOptionsType = string | number | boolean | object | undefined | null;
+
+export type IPublicTypeStates = 'success' | 'fail';

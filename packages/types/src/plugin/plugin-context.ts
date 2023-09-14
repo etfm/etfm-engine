@@ -1,3 +1,5 @@
+import { IPublicApiRouter } from '../api';
+import { IPublicApiI18n } from '../api';
 import {
   IPublicApiLogger,
   IPublicApiPlugins,
@@ -34,6 +36,10 @@ export interface IPublicModelPluginContext {
 
   get theme(): IPublicApiTheme;
 
+  get router(): IPublicApiRouter;
+
+  get i18n(): IPublicApiI18n;
+
   get persistent(): IPublicApiPersistent;
 }
 
@@ -43,6 +49,8 @@ export interface IPluginContextPrivate {
   set config(config: IPublicApiConfig);
   set global(global: IPublicApiGlobal);
   set theme(theme: IPublicApiTheme);
+  set router(router: IPublicApiRouter);
+  set i18n(i18n: IPublicApiI18n);
   set plugins(plugins: IPublicApiPlugins);
   set logger(logger: IPublicApiLogger);
   set persistent(persistent: IPublicApiPersistent);

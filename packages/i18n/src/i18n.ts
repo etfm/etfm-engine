@@ -1,36 +1,20 @@
 import { I18n, createI18n } from 'vue-i18n';
 import { setHtmlPageLang } from './helper';
 import { unref } from 'vue';
-import { IGlobalI18n, IPublic18nOptions, IPublicLocaleAssets } from '@etfm/types';
-import { EventBus, createModuleEventBus, engineConfig } from '@etfm/editor';
+import { IEventBus, IGlobalI18n, IPublic18nOptions, IPublicLocaleAssets } from '@etfm/types';
+import { createModuleEventBus, engineConfig } from '@etfm/editor';
 import { merge } from 'lodash-es';
+import { Logger } from '@etfm/shared';
+import { I18N_EVENTS, INTL_OPTIONS } from './constants';
 
 const loadLocalePool: string[] = [];
 
-export const LOCALE = {
-  ZH_CN: 'zh_CN',
-  EN_US: 'en',
-};
-
-export const I18N_EVENTS = {
-  LOCALE_ASSETS: 'i18n:assets',
-};
-
-export const INTL_OPTIONS = {
-  locale: LOCALE.ZH_CN,
-  fallbackLocale: LOCALE.ZH_CN,
-  availableLocales: [LOCALE.ZH_CN, LOCALE.EN_US],
-  legacy: false,
-  sync: true,
-  silentTranslationWarn: true,
-  missingWarn: false,
-  silentFallbackWarn: true,
-};
+const logger = new Logger({ bizName: 'i18n' });
 
 export class GlobalI18n implements IGlobalI18n {
   private _opts: IPublic18nOptions;
   private _i18n: I18n;
-  private eventBus: EventBus;
+  private eventBus: IEventBus;
 
   get locale() {
     return this._i18n.global.locale;
@@ -44,21 +28,20 @@ export class GlobalI18n implements IGlobalI18n {
     this.eventBus = createModuleEventBus('i18n');
     this._opts = INTL_OPTIONS;
 
+    engineConfig.onceGot('i18n').then((args) => {
+      this._opts = merge(this._opts, args);
+
+      this.setLoadLocalePool(this._opts.locale);
+
+      this._i18n = createI18n({
+        ...this._opts,
+      });
+    });
+
     this.onAssets((args: IPublicLocaleAssets) => {
-      const locale = this._opts.locale;
+      const locale = args.locale;
 
       this.setLanguageMessage(locale, args.messages);
-    });
-  }
-
-  init() {
-    const args = engineConfig.get('i18n');
-    this._opts = merge(this._opts, args);
-
-    this.setLoadLocalePool(this._opts.locale);
-
-    this._i18n = createI18n({
-      ...this._opts,
     });
   }
 
@@ -79,11 +62,12 @@ export class GlobalI18n implements IGlobalI18n {
       return locale;
     }
 
-    this.setI18nLanguage(locale);
+    if (!loadLocalePool.includes(locale)) {
+      logger.error('failed to load message from locale ' + locale);
+      return locale;
+    }
 
-    // 同步全部配置
-    const args = engineConfig.get('i18n');
-    engineConfig.set('i18n', merge(args, { locale }));
+    this.setI18nLanguage(locale);
 
     return locale;
   }

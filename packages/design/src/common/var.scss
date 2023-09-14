@@ -247,6 +247,33 @@ $disabled: map.merge(
   $disabled
 );
 
+// Aside
+$aside: () !default;
+$aside: map.merge(
+  (
+    'bg-color': getCssVar('bg-color'),
+  ),
+  $aside
+);
+
+// Header
+$header: () !default;
+$header: map.merge(
+  (
+    'bg-color': getCssVar('bg-color'),
+  ),
+  $header
+);
+
+// Toolbar
+$toolbar: () !default;
+$toolbar: map.merge(
+  (
+    'bg-color': getCssVar('bg-color'),
+  ),
+  $toolbar
+);
+
 // transition
 $transition: () !default;
 $transition: map.merge(

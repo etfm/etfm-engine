@@ -11,7 +11,7 @@
     "prepare": "is-ci || husky install",
     "lint:lint-staged": "lint-staged -c ./.lintstagedrc",
     "commit": "czg",
-    "build": "turbo build --filter=./apps/element-admin",
+    "build": "pnpm --filter @etfm/engine build && pnpm --filter @etfm/design build",
     "build:packages": "turbo build --filter=./packages/*",
     "build:stub": "turbo stub",
     "dev": "turbo dev --filter=./apps/element-admin --no-daemon --include-dependencies"

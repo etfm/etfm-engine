@@ -7,8 +7,10 @@ import type {
   IPublicApiConfig,
   IPublicApiEvent,
   IPublicApiGlobal,
+  IPublicApiI18n,
   IPublicApiPersistent,
   IPublicApiPlugins,
+  IPublicApiRouter,
   IPublicApiSkeleton,
   IPublicApiTheme,
   IPublicModelPluginContext,
@@ -21,6 +23,8 @@ export default class PluginContext implements IPublicModelPluginContext {
   config: IPublicApiConfig;
   global: IPublicApiGlobal;
   theme: IPublicApiTheme;
+  i18n: IPublicApiI18n;
+  router: IPublicApiRouter;
   logger: Logger;
   plugins: IPublicApiPlugins;
   preference: IPluginPreferenceMananger;

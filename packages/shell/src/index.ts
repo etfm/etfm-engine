@@ -6,3 +6,5 @@ export * from './plugins';
 export * from './skeleton-item';
 export * from './theme';
 export * from './persistent';
+export * from './i18n';
+export * from './router';
