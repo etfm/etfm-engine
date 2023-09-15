@@ -11,9 +11,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@etfm/design": "workspace:*",
     "@etfm/engine": "workspace:*",
-    "@etfm/shared": "workspace:*",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^6.2.1",
     "vue": "^3.3.4",
@@ -21,7 +19,6 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@etfm/types": "workspace:*",
     "@types/nprogress": "^0.2.0",
     "vite-plugin-mock": "^2.9.6"
   }

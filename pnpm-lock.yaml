@@ -153,15 +153,9 @@ importers:
 
   apps/element-admin:
     dependencies:
-      '@etfm/design':
-        specifier: workspace:*
-        version: link:../../packages/design
       '@etfm/engine':
         specifier: workspace:*
         version: link:../../packages/engine
-      '@etfm/shared':
-        specifier: workspace:*
-        version: link:../../packages/shared
       nprogress:
         specifier: ^0.2.0
         version: 0.2.0
@@ -178,9 +172,6 @@ importers:
         specifier: ^4.1.6
         version: 4.2.1(vue@3.3.4)
     devDependencies:
-      '@etfm/types':
-        specifier: workspace:*
-        version: link:../../packages/types
       '@types/nprogress':
         specifier: ^0.2.0
         version: 0.2.0
