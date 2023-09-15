@@ -16,3 +16,4 @@ export * from './common';
 export * from './global';
 export * from './i18n';
 export * from './router';
+export * from './tree';

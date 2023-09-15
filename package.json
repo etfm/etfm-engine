@@ -11,8 +11,7 @@
     "prepare": "is-ci || husky install",
     "lint:lint-staged": "lint-staged -c ./.lintstagedrc",
     "commit": "czg",
-    "build": "pnpm --filter @etfm/engine build && pnpm --filter @etfm/design build",
-    "build:packages": "turbo build --filter=./packages/*",
+    "build": "pnpm --filter @etfm/engine build && pnpm --filter @etfm/design build &&  turbo build --filter=!@etfm/design --filter=!@etfm/engine --filter=!element-admin",
     "build:stub": "turbo stub",
     "dev": "turbo dev --filter=./apps/element-admin --no-daemon --include-dependencies"
   },
@@ -25,6 +24,7 @@
     "events": "^3.3.0",
     "intl-messageformat": "^10.3.5",
     "lodash-es": "^4.17.21",
+    "modern-normalize": "^1.1.0",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^6.2.1",
     "pinia": "^2.0.32",

@@ -6,7 +6,7 @@ import {
   IPublicRouterOptions,
   IEventBus,
 } from '@etfm/types';
-import { filter } from '@etfm/shared';
+import { filterTree } from '@etfm/shared';
 import { flatMultiLevelRoutes, routeRemoveFilter } from './utils';
 import { createModuleEventBus, engineConfig } from '@etfm/editor';
 import { isArray, isEmpty, isFunction, merge } from 'lodash-es';
@@ -68,7 +68,9 @@ export class GlobalRouter implements IGlobalRouter {
     if (routes && !isEmpty(routes)) {
       routes = isArray(routes) ? routes : [routes];
       // 忽略路由
-      const filterRoutes = filter(routes, (route) => routeRemoveFilter(route, rouls as string[]));
+      const filterRoutes = filterTree(routes, (route) =>
+        routeRemoveFilter(route, rouls as string[]),
+      );
       // 路由打平到二级路由
       const patchRoutes = flatMultiLevelRoutes(filterRoutes);
       return patchRoutes;

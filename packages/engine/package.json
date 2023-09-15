@@ -13,7 +13,15 @@
   "license": "ISC",
   "author": "lzdjack <1956252575@qq.com>",
   "sideEffects": false,
+  "exports": {
+    ".": {
+      "default": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
   "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "files": [
     "dist",
     "src"
@@ -38,7 +46,8 @@
     "@etfm/theme": "workspace:*"
   },
   "devDependencies": {
-    "@etfm/types": "workspace:^0.0.0"
+    "@etfm/types": "workspace:^0.0.0",
+    "pkg-types": "^1.0.2"
   },
   "publishConfig": {
     "access": "public",
@@ -46,9 +55,10 @@
       ".": {
         "default": "./dist/index.mjs",
         "types": "./dist/index.d.ts"
-      },
-      "main": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
+      }
+    },
+    "main": "./dist/index.mjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
   }
 }

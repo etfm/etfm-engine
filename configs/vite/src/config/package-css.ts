@@ -1,6 +1,5 @@
-// import { readPackageJSON } from 'pkg-types';
 import { defineConfig, mergeConfig, type UserConfig } from 'vite';
-import { existsSync, mkdirSync, readdirSync, lstatSync, copyFileSync, exists } from 'fs-extra';
+import { existsSync, mkdirSync, readdirSync, lstatSync, copyFileSync } from 'fs-extra';
 import path from 'path';
 
 import { commonConfig } from './common';
@@ -50,8 +49,6 @@ function definePackageConfigCss(defineOptions: DefineOptions = {}) {
   const { overrides = {} } = defineOptions;
   const root = process.cwd();
   return defineConfig(async () => {
-    // const { dependencies = {}, peerDependencies = {} } = await readPackageJSON(root);
-
     copyDirectory(`${root}/src`, path.resolve(root, '../', 'engine/dist/theme'), true);
 
     const packageConfig: UserConfig = {

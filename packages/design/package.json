@@ -40,20 +40,5 @@
     "build": "pnpm vite build",
     "clean": "pnpm rimraf .turbo node_modules dist",
     "test": "node ./__tests__/@etfm/styles.test.js"
-  },
-  "dependencies": {
-    "modern-normalize": "^1.1.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "exports": {
-      ".": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
-      },
-      "./shared": {
-        "default": "./src/_shared.scss"
-      }
-    }
   }
 }

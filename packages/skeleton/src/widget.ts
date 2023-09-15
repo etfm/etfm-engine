@@ -8,7 +8,7 @@ import {
 } from '@etfm/types';
 
 export class Widget implements IWidget {
-  readonly id = uniqueId('widget');
+  readonly id = uniqueId();
 
   readonly name: string;
 

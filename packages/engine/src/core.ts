@@ -32,6 +32,7 @@ export * from './types';
 export * from './persistent';
 export * from './hooks';
 export * from './i18n';
+export * from './share';
 
 const innerGlobal = new InnerGlobal();
 const global = new Global(innerGlobal);

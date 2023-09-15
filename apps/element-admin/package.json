@@ -11,10 +11,9 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@etfm/engine": "workspace:*",
-    "@etfm/hooks": "workspace:*",
-    "@etfm/shared": "workspace:*",
     "@etfm/design": "workspace:*",
+    "@etfm/engine": "workspace:*",
+    "@etfm/shared": "workspace:*",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^6.2.1",
     "vue": "^3.3.4",
